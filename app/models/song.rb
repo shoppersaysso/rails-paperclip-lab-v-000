@@ -11,4 +11,10 @@ class Song < ActiveRecord::Base
     artist = Artist.find_or_create_by(name: name)
     self.artist = artist
   end
+
+private
+
+  def song_params
+    params.require(:author).permit(:bio, :name, :avatar)
+  end
 end
