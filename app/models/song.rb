@@ -16,4 +16,8 @@ class Song < ActiveRecord::Base
     self.song_album_cover
   end
 
+  def song_song_album_cover
+    self.song_album_cover
+  end
+
 end
