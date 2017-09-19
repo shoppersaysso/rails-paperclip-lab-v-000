@@ -1057,3 +1057,23 @@ Command :: file -b --mime '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-j
 Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-16o5rum.gif[0]' 2>/dev/null
 Command :: identify -format %m '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-16o5rum.gif[0]'
 Command :: convert '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-16o5rum.gif' -coalesce -auto-orient -resize "100x100>" -layers "optimize" '/tmp/451d2069cd860b14483742a240e591e820170919-22444-1geqo6t'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-jnfo7e.gif'
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "song_album_cover_file_name", "song_album_cover_content_type", "song_album_cover_file_size", "song_album_cover_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "sfa"], ["artist_id", 6], ["song_album_cover_file_name", "homer.gif"], ["song_album_cover_content_type", "image/gif"], ["song_album_cover_file_size", 98661], ["song_album_cover_updated_at", "2017-09-19 20:20:33.235938"], ["created_at", "2017-09-19 20:20:33.671574"], ["updated_at", "2017-09-19 20:20:33.671574"]]
+  [1m[35m (5.4ms)[0m  commit transaction
+Redirected to http://165.227.16.205:37361/songs/7
+Completed 302 Found in 482ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/songs/7" for 136.179.21.80 at 2017-09-19 20:20:33 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered songs/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 136.179.21.80 at 2017-09-19 20:20:34 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
