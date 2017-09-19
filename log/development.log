@@ -796,3 +796,32 @@ Completed 200 OK in 297ms (Views: 282.4ms | ActiveRecord: 0.4ms)
 
 Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 136.179.21.80 at 2017-09-19 20:13:15 +0000
 Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/songs/new" for 136.179.21.80 at 2017-09-19 20:19:11 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (68.8ms)
+  Rendered songs/new.html.erb within layouts/application (78.0ms)
+Completed 200 OK in 311ms (Views: 294.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 136.179.21.80 at 2017-09-19 20:19:12 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/songs" for 136.179.21.80 at 2017-09-19 20:19:22 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dlEXjNhFww94acZdDPNthrvVk0X6ZJjNEKTqd53Pbpx5OzsGXU5+alpbPyrcOB8DSFHK8TRHbmTflGL71hNStQ==", "song"=>{"album_cover"=>#<ActionDispatch::Http::UploadedFile:0x007f49fe386ef0 @tempfile=#<Tempfile:/tmp/RackMultipart20170919-22444-18exsah.gif>, @original_filename="homer.gif", @content_type="image/gif", @headers="Content-Disposition: form-data; name=\"song[album_cover]\"; filename=\"homer.gif\"\r\nContent-Type: image/gif\r\n">, "title"=>"Dancin Homer", "artist_name"=>"Homer Simpson"}, "commit"=>"Create Song"}
+Unpermitted parameter: album_cover
+  [1m[35mArtist Load (0.5ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Homer Simpson"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Homer Simpson"], ["created_at", "2017-09-19 20:19:23.002707"], ["updated_at", "2017-09-19 20:19:23.002707"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.3ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Dancin Homer"], ["artist_id", 5], ["created_at", "2017-09-19 20:19:23.013740"], ["updated_at", "2017-09-19 20:19:23.013740"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+Redirected to http://165.227.16.205:37361/songs/5
+Completed 302 Found in 61ms (ActiveRecord: 20.5ms)
