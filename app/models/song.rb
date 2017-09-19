@@ -12,9 +12,4 @@ class Song < ActiveRecord::Base
     self.artist = artist
   end
 
-private
-
-  def song_params
-    params.require(:author).permit(:bio, :name, :avatar)
-  end
 end
