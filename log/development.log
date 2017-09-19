@@ -550,3 +550,4 @@ Migrating to AddAttachmentSongAlbumCoverToSongs (20170919194642)
             FROM sqlite_temp_master
             WHERE name='index_songs_on_artist_id' AND type='index'
 
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE (song_album_cover_file_name IS NOT NULL)  ORDER BY "songs"."id" ASC LIMIT 1000[0m
