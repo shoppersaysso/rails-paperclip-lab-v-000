@@ -14,5 +14,6 @@ class Song < ActiveRecord::Base
 
   def album_cover
     self.try(:album_cover).try(:song_album_cover)
+  end
 
 end
