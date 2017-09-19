@@ -12,4 +12,7 @@ class Song < ActiveRecord::Base
     self.artist = artist
   end
 
+  def album_cover
+    self.try(:album_cover).try(:song_album_cover)
+
 end
