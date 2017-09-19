@@ -1031,3 +1031,29 @@ Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
 
 Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 136.179.21.80 at 2017-09-19 20:20:02 +0000
 Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/songs/new" for 136.179.21.80 at 2017-09-19 20:20:23 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (2.8ms)
+  Rendered songs/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 136.179.21.80 at 2017-09-19 20:20:23 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/songs" for 136.179.21.80 at 2017-09-19 20:20:33 +0000
+Cannot render console from 136.179.21.80! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xUpk2RMl9zmrmzufXPUn51w4BzfgAyuyLIlvGK4fL+nKIEhTli5KXImpwuiMPlVir7xegy4g3RvjueeU5cMTwA==", "song"=>{"song_album_cover"=>#<ActionDispatch::Http::UploadedFile:0x007f49fe4fe990 @tempfile=#<Tempfile:/tmp/RackMultipart20170919-22444-1vha2jj.gif>, @original_filename="homer.gif", @content_type="image/gif", @headers="Content-Disposition: form-data; name=\"song[song_album_cover]\"; filename=\"homer.gif\"\r\nContent-Type: image/gif\r\n">, "title"=>"sfa", "artist_name"=>"asfda"}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "asfda"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "asfda"], ["created_at", "2017-09-19 20:20:33.223344"], ["updated_at", "2017-09-19 20:20:33.223344"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+Command :: file -b --mime '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-jrykpr.gif'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-16o5rum.gif[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-16o5rum.gif[0]'
+Command :: convert '/tmp/dfa8327f5bfa4c672a04f9b38e348a7020170919-22444-16o5rum.gif' -coalesce -auto-orient -resize "100x100>" -layers "optimize" '/tmp/451d2069cd860b14483742a240e591e820170919-22444-1geqo6t'
